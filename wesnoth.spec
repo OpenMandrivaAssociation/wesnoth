@@ -3,7 +3,7 @@
 
 Summary:	Battle for Wesnoth is a fantasy turn-based strategy game
 Name:		wesnoth
-Version: 1.2.1
+Version: 1.2.4
 Release: %mkrel 1
 License:	GPL
 Group:		Games/Strategy
@@ -139,6 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_mandir}/nl/*/*
 %lang(pt) %{_mandir}/pt_BR/*/*
 %lang(sk) %{_mandir}/sk/*/*
+%lang(ru) %{_mandir}/ru/*/*
 %{_datadir}/applications/*
 
 %files -n %{name}-server
