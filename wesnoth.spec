@@ -83,7 +83,6 @@ EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Battle For Wesnoth
 Comment=A fantasy turn-based strategy game.
 Exec=%_gamesbindir/%{name}
@@ -95,7 +94,6 @@ EOF
 
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}-editor.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Battle For Wesnoth editor
 Comment=The map editor of Battle for Wesnoth
 Exec=%_gamesbindir/%{name}_editor
