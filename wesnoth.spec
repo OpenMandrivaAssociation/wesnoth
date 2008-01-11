@@ -60,25 +60,6 @@ convert $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png -size 16x16 $RPM_BUILD_ROOT%{_m
 
 
 # menu entry
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat >$RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
-?package(%{name}): \
-needs="x11" \
-section="More Applications/Games/Strategy" \
-title="Battle For Wesnoth" \
-longtitle="A fantasy turn-based strategy game." \
-command="%{_gamesbindir}/%{name}" \
-icon="%{name}.png" \
-xdg="true"
-?package(%{name}): \
-needs="x11" \
-section="More Applications/Games/Strategy" \
-title="Battle For Wesnoth editor" \
-longtitle="The map editor of Battle for Wesnoth" \
-command="%{_gamesbindir}/%{name}_editor" \
-icon="%{name}.png" \
-xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -120,7 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_gamesbindir}/%{name}d
 %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
-%{_menudir}/%{name}
 %{_liconsdir}/%{name}.*
 %{_iconsdir}/%{name}.*
 %{_miconsdir}/%{name}.*
