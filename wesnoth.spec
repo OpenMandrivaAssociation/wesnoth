@@ -1,7 +1,7 @@
 # TODO add a init file for server, if it is worth
 # split data if we can force a rpm to be noarch
 
-Summary:	Battle for Wesnoth is a fantasy turn-based strategy game
+Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
 Version: 1.2.8
 Release: %mkrel 1
