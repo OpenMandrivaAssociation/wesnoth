@@ -12,8 +12,11 @@ Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Source1: %{name}-icon.png
 Patch0: wesnoth-0.9.0-fix-non-root-install.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: SDL_image-devel SDL_ttf-devel
-BuildRequires: SDL_net-devel SDL_mixer-devel
+BuildRequires: SDL_image-devel
+BuildRequires: SDL_ttf-devel
+BuildRequires: SDL_net-devel
+BuildRequires: SDL_mixer-devel
+BuildRequires: boost-devel
 BuildRequires: oggvorbis-devel
 BuildRequires: ImageMagick
 BuildRequires: python-devel
