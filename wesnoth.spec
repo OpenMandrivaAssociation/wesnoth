@@ -104,7 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
-%doc changelog MANUAL MANUAL.* README
+%doc changelog README
 %exclude %{_gamesbindir}/%{name}d
 %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
