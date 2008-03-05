@@ -1,22 +1,22 @@
 # TODO add a init file for server, if it is worth
 # split data if we can force a rpm to be noarch
 
-Summary:	Fantasy turn-based strategy game
-Name:		wesnoth
-Version: 1.2.8
-Release: %mkrel 2
-License:	GPL
-Group:		Games/Strategy
-Url:		http://www.wesnoth.org/
-Source0:	http://www.wesnoth.org/files/%{name}-%{version}.tar.bz2
-Source1:	%{name}-icon.png
-Patch0:		wesnoth-0.9.0-fix-non-root-install.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	SDL_image-devel SDL_ttf-devel
-BuildRequires:	SDL_net-devel SDL_mixer-devel
-BuildRequires:	oggvorbis-devel
-BuildRequires:	ImageMagick
-BuildRequires:	python-devel
+Summary: Fantasy turn-based strategy game
+Name: wesnoth
+Version: 1.4
+Release: %mkrel 1
+License: GPL
+Group: Games/Strategy
+Url: http://www.wesnoth.org/
+Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source1: %{name}-icon.png
+Patch0: wesnoth-0.9.0-fix-non-root-install.patch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires: SDL_image-devel SDL_ttf-devel
+BuildRequires: SDL_net-devel SDL_mixer-devel
+BuildRequires: oggvorbis-devel
+BuildRequires: ImageMagick
+BuildRequires: python-devel
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
@@ -25,9 +25,9 @@ have advantages and disadvantages in different types of terrains and
 against different types of attacks. Units gain experience and advance 
 levels, and are carried over from one scenario to the next campaign.
 
-%package -n	%{name}-server
-Summary:	Server for "Battle fo Wesnoth" game 
-Group:		Games/Strategy
+%package -n %{name}-server
+Summary: Server for "Battle fo Wesnoth" game 
+Group: Games/Strategy
 
 %description -n	%{name}-server
 This package contains "Battle for wesnoth" server, used to play multiplayer
@@ -38,12 +38,12 @@ game without needing to install the full client.
 %setup -q
 #%patch0 -p1 -b .nonroot
 %build
-%configure	--datadir=%{_gamesdatadir} \
-		--bindir=%{_gamesbindir} \
-		--enable-server \
-		--enable-editor \
-        --enable-python \
-		--with-localedir=%{_datadir}/locale
+%configure --datadir=%{_gamesdatadir} \
+ --bindir=%{_gamesbindir} \
+ --enable-server \
+ --enable-editor \
+ --enable-python \
+ --with-localedir=%{_datadir}/locale
 #perl -pi -e 's|^localedir = .*|localedir=%{_datadir}/locale|' $(find . -name Makefile )
 %make
 
@@ -84,6 +84,10 @@ Type=Application
 Categories=X-MandrivaLinux-MoreApplications-Games-Strategy;Game;StrategyGame;
 EOF
 
+#remove desktop and icons installed in _gamesdatadir
+rm -rf %{buildroot}%{_gamesdatadir}/applications
+rm -rf %{buildroot}%{_gamesdatadir}/icons
+
 %find_lang %{name} --all-name
 
 %post
@@ -106,18 +110,23 @@ rm -rf $RPM_BUILD_ROOT
 %{_miconsdir}/%{name}.*
 %{_mandir}/*/%{name}.*
 %{_mandir}/*/%{name}_editor.*
+%lang(cs) %{_mandir}/cs/*/*
+%lang(da) %{_mandir}/da/*/*
 %lang(de) %{_mandir}/de/*/*
-%lang(sv) %{_mandir}/sv/*/*
-%lang(cs) %{_mandir}/cs/*/*
-%lang(en) %{_mandir}/en_GB/*/*
-%lang(cs) %{_mandir}/cs/*/*
+#lang(en) %{_mandir}/en_GB/*/*
+%lang(es) %{_mandir}/es/*/*
 %lang(fr) %{_mandir}/fr/*/*
+%lang(hu) %{_mandir}/hu/*/*
 %lang(it) %{_mandir}/it/*/*
 %lang(ja) %{_mandir}/ja/*/*
+%lang(lt) %{_mandir}/lt/*/*
 %lang(nl) %{_mandir}/nl/*/*
-%lang(pt) %{_mandir}/pt_BR/*/*
+%lang(pl) %{_mandir}/pl/*/*
+#lang(pt) %{_mandir}/pt_BR/*/*
 %lang(sk) %{_mandir}/sk/*/*
-%lang(ru) %{_mandir}/ru/*/*
+%lang(sv) %{_mandir}/sv/*/*
+#lang(ru) %{_mandir}/ru/*/*
+%lang(zh) %{_mandir}/zh_CN/*/*
 %{_datadir}/applications/*
 
 %files -n %{name}-server
