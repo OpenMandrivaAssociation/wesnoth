@@ -4,7 +4,7 @@
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
 Version: 1.4
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPL
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
@@ -136,5 +136,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,0755)
 %{_gamesbindir}/%{name}d
 %{_mandir}/*/%{name}d.*
-
-
