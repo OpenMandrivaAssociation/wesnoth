@@ -113,12 +113,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_miconsdir}/%{name}.*
 %{_mandir}/*/%{name}.*
 %{_mandir}/*/%{name}_editor.*
+%lang(ca) %{_mandir}/ca_ES@valencia/*/*
 %lang(cs) %{_mandir}/cs/*/*
 %lang(da) %{_mandir}/da/*/*
 %lang(de) %{_mandir}/de/*/*
 #lang(en) %{_mandir}/en_GB/*/*
 %lang(es) %{_mandir}/es/*/*
 %lang(fr) %{_mandir}/fr/*/*
+%lang(gl) %{_mandir}/gl_ES/*/*
 %lang(hu) %{_mandir}/hu/*/*
 %lang(it) %{_mandir}/it/*/*
 %lang(ja) %{_mandir}/ja/*/*
