@@ -93,11 +93,15 @@ rm -rf %{buildroot}%{_gamesdatadir}/icons
 
 %find_lang %{name} --all-name
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
