@@ -123,6 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_mandir}/de/*/*
 #lang(en) %{_mandir}/en_GB/*/*
 %lang(es) %{_mandir}/es/*/*
+%lang(fi) %{_mandir}/fi/*/*
 %lang(fr) %{_mandir}/fr/*/*
 %lang(gl) %{_mandir}/gl/*/*
 %lang(hu) %{_mandir}/hu/*/*
@@ -138,7 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sv) %{_mandir}/sv/*/*
 %lang(tr) %{_mandir}/tr/*/*
 #lang(ru) %{_mandir}/ru/*/*
-%lang(zh) %{_mandir}/zh_CN/*/*
+%lang(zh_CN) %{_mandir}/zh_CN/*/*
 %lang(zh_TW) %{_mandir}/zh_TW/*/*
 %{_datadir}/applications/*
 
