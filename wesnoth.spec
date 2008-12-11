@@ -18,7 +18,7 @@ BuildRequires: SDL_net-devel
 BuildRequires: SDL_mixer-devel
 BuildRequires: boost-devel
 BuildRequires: oggvorbis-devel
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 BuildRequires: python-devel
 
 %description
