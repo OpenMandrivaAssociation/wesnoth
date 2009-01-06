@@ -3,8 +3,8 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.4.6
-Release: %mkrel 4
+Version: 1.4.7
+Release: %mkrel 1
 License: GPL
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
@@ -23,13 +23,13 @@ BuildRequires: python-devel
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
-Battle for control of villages, using variety of units which 
-have advantages and disadvantages in different types of terrains and 
-against different types of attacks. Units gain experience and advance 
+Battle for control of villages, using variety of units which
+have advantages and disadvantages in different types of terrains and
+against different types of attacks. Units gain experience and advance
 levels, and are carried over from one scenario to the next campaign.
 
 %package -n %{name}-server
-Summary: Server for "Battle fo Wesnoth" game 
+Summary: Server for "Battle fo Wesnoth" game
 Group: Games/Strategy
 
 %description -n	%{name}-server
