@@ -3,8 +3,8 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.4.7
-Release: %mkrel 2
+Version: 1.6
+Release: %mkrel 1
 License: GPL
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
@@ -20,6 +20,7 @@ BuildRequires: boost-devel
 BuildRequires: oggvorbis-devel
 BuildRequires: imagemagick
 BuildRequires: python-devel
+BuildRequires: pango-devel
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
@@ -116,12 +117,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/%{name}.*
 %{_miconsdir}/%{name}.*
 %{_mandir}/*/%{name}.*
-%{_mandir}/*/%{name}_editor.*
-%lang(ca) %{_mandir}/ca_ES@valencia/*/*
+#%{_mandir}/*/%{name}_editor.*
+#%lang(ca) %{_mandir}/ca_ES@valencia/*/*
 %lang(cs) %{_mandir}/cs/*/*
 %lang(da) %{_mandir}/da/*/*
 %lang(de) %{_mandir}/de/*/*
-#lang(en) %{_mandir}/en_GB/*/*
+%lang(en) %{_mandir}/en_GB/*/*
 %lang(es) %{_mandir}/es/*/*
 %lang(fi) %{_mandir}/fi/*/*
 %lang(fr) %{_mandir}/fr/*/*
@@ -133,6 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_mandir}/nl/*/*
 %lang(pl) %{_mandir}/pl/*/*
 #lang(pt) %{_mandir}/pt_BR/*/*
+%lang(ca) %{_mandir}/racv/*/*
 %lang(sk) %{_mandir}/sk/*/*
 %lang(sr) %{_mandir}/sr/*/*
 %lang(sr@latin) %{_mandir}/sr@latin/*/*
