@@ -3,7 +3,7 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.6a
+Version: 1.6.1
 Release: %mkrel 1
 License: GPL
 Group: Games/Strategy
@@ -120,21 +120,22 @@ rm -rf $RPM_BUILD_ROOT
 #%{_mandir}/*/%{name}_editor.*
 #%lang(ca) %{_mandir}/ca_ES@valencia/*/*
 %lang(cs) %{_mandir}/cs/*/*
-%lang(da) %{_mandir}/da/*/*
+#%lang(da) %{_mandir}/da/*/*
 %lang(de) %{_mandir}/de/*/*
 %lang(en) %{_mandir}/en_GB/*/*
 %lang(es) %{_mandir}/es/*/*
 %lang(fi) %{_mandir}/fi/*/*
-%lang(fr) %{_mandir}/fr/*/*
+#%lang(fr) %{_mandir}/fr/*/*
 %lang(gl) %{_mandir}/gl/*/*
 %lang(hu) %{_mandir}/hu/*/*
 %lang(it) %{_mandir}/it/*/*
-%lang(ja) %{_mandir}/ja/*/*
+#%lang(ja) %{_mandir}/ja/*/*
 %lang(lt) %{_mandir}/lt/*/*
-%lang(nl) %{_mandir}/nl/*/*
+#%lang(nl) %{_mandir}/nl/*/*
 %lang(pl) %{_mandir}/pl/*/*
 #lang(pt) %{_mandir}/pt_BR/*/*
-%lang(ca) %{_mandir}/racv/*/*
+#%lang(ca) %{_mandir}/racv/*/*
+%lang(ru) %{_mandir}/ru/*/*
 %lang(sk) %{_mandir}/sk/*/*
 %lang(sr) %{_mandir}/sr/*/*
 %lang(sr@latin) %{_mandir}/sr@latin/*/*
@@ -142,7 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(tr) %{_mandir}/tr/*/*
 #lang(ru) %{_mandir}/ru/*/*
 %lang(zh_CN) %{_mandir}/zh_CN/*/*
-%lang(zh_TW) %{_mandir}/zh_TW/*/*
+#%lang(zh_TW) %{_mandir}/zh_TW/*/*
 %{_datadir}/applications/*
 
 %files -n %{name}-server
