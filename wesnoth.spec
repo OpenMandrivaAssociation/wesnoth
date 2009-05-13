@@ -3,9 +3,9 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.6.1
+Version: 1.6.2
 Release: %mkrel 1
-License: GPL
+License: GPLv2+
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
@@ -125,7 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(en) %{_mandir}/en_GB/*/*
 %lang(es) %{_mandir}/es/*/*
 %lang(fi) %{_mandir}/fi/*/*
-#%lang(fr) %{_mandir}/fr/*/*
+%lang(fr) %{_mandir}/fr/*/*
 %lang(gl) %{_mandir}/gl/*/*
 %lang(hu) %{_mandir}/hu/*/*
 %lang(it) %{_mandir}/it/*/*
@@ -135,7 +135,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pl) %{_mandir}/pl/*/*
 #lang(pt) %{_mandir}/pt_BR/*/*
 #%lang(ca) %{_mandir}/racv/*/*
-%lang(ru) %{_mandir}/ru/*/*
 %lang(sk) %{_mandir}/sk/*/*
 %lang(sr) %{_mandir}/sr/*/*
 %lang(sr@latin) %{_mandir}/sr@latin/*/*
