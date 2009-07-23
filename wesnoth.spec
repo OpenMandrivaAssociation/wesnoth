@@ -51,7 +51,8 @@ export CXXFLAGS=$CFLAGS
  --enable-server \
  --enable-editor \
  --enable-python \
- --with-localedir=%{_datadir}/locale
+ --with-localedir=%{_datadir}/locale \
+ --disable-strict-compilation
 #perl -pi -e 's|^localedir = .*|localedir=%{_datadir}/locale|' $(find . -name Makefile )
 %make
 
