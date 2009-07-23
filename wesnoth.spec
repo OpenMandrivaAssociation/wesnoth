@@ -3,7 +3,7 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.6.2
+Version: 1.6.4
 Release: %mkrel 1
 License: GPLv2+
 Group: Games/Strategy
@@ -41,7 +41,11 @@ game without needing to install the full client.
 %prep
 %setup -q
 #%patch0 -p1 -b .nonroot
+
 %build
+export CFLAGS="%optflags -fno-strict-aliasing"
+export CXXFLAGS=$CFLAGS
+
 %configure --datadir=%{_gamesdatadir} \
  --bindir=%{_gamesbindir} \
  --enable-server \
@@ -142,7 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(tr) %{_mandir}/tr/*/*
 #lang(ru) %{_mandir}/ru/*/*
 %lang(zh_CN) %{_mandir}/zh_CN/*/*
-#%lang(zh_TW) %{_mandir}/zh_TW/*/*
+%lang(zh_TW) %{_mandir}/zh_TW/*/*
 %{_datadir}/applications/*
 
 %files -n %{name}-server
