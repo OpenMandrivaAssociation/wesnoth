@@ -3,8 +3,8 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.6.5
-Release: %mkrel 5
+Version: 1.8
+Release: %mkrel 1
 License: GPLv2+
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
@@ -45,7 +45,7 @@ game without needing to install the full client.
 %build
 export CFLAGS="%optflags -fno-strict-aliasing"
 export CXXFLAGS=$CFLAGS
-
+sh autogen.sh
 %configure --datadir=%{_gamesdatadir} \
  --bindir=%{_gamesbindir} \
  --enable-server \
@@ -135,16 +135,18 @@ rm -rf $RPM_BUILD_ROOT
 %lang(gl) %{_mandir}/gl/*/*
 %lang(hu) %{_mandir}/hu/*/*
 %lang(it) %{_mandir}/it/*/*
-#%lang(ja) %{_mandir}/ja/*/*
+%lang(ja) %{_mandir}/ja/*/*
 %lang(lt) %{_mandir}/lt/*/*
 #%lang(nl) %{_mandir}/nl/*/*
 %lang(pl) %{_mandir}/pl/*/*
-#lang(pt) %{_mandir}/pt_BR/*/*
+%lang(pt) %{_mandir}/pt_BR/*/*
 #%lang(ca) %{_mandir}/racv/*/*
 %lang(sk) %{_mandir}/sk/*/*
 %lang(sr) %{_mandir}/sr/*/*
 %lang(sr@latin) %{_mandir}/sr@latin/*/*
-%lang(sv) %{_mandir}/sv/*/*
+%lang(sr@ijekavian) %{_mandir}/sr@ijekavian/*/*
+%lang(sr@ijekavianlatin) %{_mandir}/sr@ijekavianlatin/*/*
+#lang(sv) %{_mandir}/sv/*/*
 %lang(tr) %{_mandir}/tr/*/*
 #lang(ru) %{_mandir}/ru/*/*
 %lang(zh_CN) %{_mandir}/zh_CN/*/*
