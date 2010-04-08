@@ -21,6 +21,7 @@ BuildRequires: oggvorbis-devel
 BuildRequires: imagemagick
 BuildRequires: python-devel
 BuildRequires: pango-devel
+BuildRequires: lua-devel >= 5.1.4
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
