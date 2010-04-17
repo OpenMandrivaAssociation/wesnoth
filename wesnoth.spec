@@ -10,8 +10,6 @@ Group: Games/Strategy
 Url: http://www.wesnoth.org/
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Source1: %{name}-icon.png
-Patch0: wesnoth-0.9.0-fix-non-root-install.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: SDL_image-devel
 BuildRequires: SDL_ttf-devel
 BuildRequires: SDL_net-devel
@@ -22,6 +20,7 @@ BuildRequires: imagemagick
 BuildRequires: python-devel
 BuildRequires: pango-devel
 BuildRequires: lua-devel >= 5.1.4
+BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
@@ -38,10 +37,8 @@ Group: Games/Strategy
 This package contains "Battle for wesnoth" server, used to play multiplayer
 game without needing to install the full client.
 
-
 %prep
 %setup -q
-#%patch0 -p1 -b .nonroot
 
 %build
 export CFLAGS="%optflags -fno-strict-aliasing"
