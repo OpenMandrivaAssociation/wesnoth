@@ -52,7 +52,7 @@ sh autogen.sh
  --with-localedir=%{_datadir}/locale \
  --disable-strict-compilation
 # disable parallel build, it breaks on klodia
-%_make
+%__make
 
 %install
 
