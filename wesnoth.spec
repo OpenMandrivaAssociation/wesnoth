@@ -20,6 +20,7 @@ BuildRequires: imagemagick
 BuildRequires: python-devel
 BuildRequires: pango-devel
 BuildRequires: lua-devel >= 5.1.4
+BuildRequires: cmake
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
@@ -41,59 +42,19 @@ game without needing to install the full client.
 %setup -q
 
 %build
-export CFLAGS="%optflags -fno-strict-aliasing"
-export CXXFLAGS=$CFLAGS
-sh autogen.sh
-%configure --datadir=%{_gamesdatadir} \
- --bindir=%{_gamesbindir} \
- --enable-server \
- --enable-editor \
- --enable-python \
- --with-localedir=%{_datadir}/locale \
- --disable-strict-compilation
-# disable parallel build, it breaks on klodia
-%__make
+%cmake -DENABLE_STRICT_COMPILATION=OFF \
+	-DBINDIR=%{_gamesbindir} \
+	-DDATAROOTDIR=%{_gamesdatadir} \
+	-DDESKTOPDIR=%{_datadir}/applications \
+	-DDOCDIR=%{_datadir}/doc/%name \
+	-DMANDIR=%{_mandir} -DICONDIR=%{_iconsdir}
+%make
 
 %install
 
 rm -rf $RPM_BUILD_ROOT
 
-%makeinstall_std
-mkdir -p $RPM_BUILD_ROOT{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
-
-cp %{SOURCE1} $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
-convert $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png -size 32x32 $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-convert $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png -size 16x16 $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-
-
-# menu entry
-
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-[Desktop Entry]
-Name=Battle For Wesnoth
-Comment=A fantasy turn-based strategy game.
-Exec=%_gamesbindir/%{name}
-Icon=%{name}
-Terminal=false
-Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Games-Strategy;Game;StrategyGame;
-EOF
-
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}-editor.desktop << EOF
-[Desktop Entry]
-Name=Battle For Wesnoth editor
-Comment=The map editor of Battle for Wesnoth
-Exec=%_gamesbindir/%{name}_editor
-Icon=%{name}
-Terminal=false
-Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Games-Strategy;Game;StrategyGame;
-EOF
-
-#remove desktop and icons installed in _gamesdatadir
-rm -rf %{buildroot}%{_gamesdatadir}/applications
-rm -rf %{buildroot}%{_gamesdatadir}/icons
+%makeinstall_std -C build
 
 %find_lang %{name} --all-name
 
@@ -116,9 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_gamesbindir}/%{name}d
 %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
-%{_liconsdir}/%{name}.*
-%{_iconsdir}/%{name}.*
-%{_miconsdir}/%{name}.*
 %{_mandir}/*/%{name}.*
 #%{_mandir}/*/%{name}_editor.*
 #%lang(ca) %{_mandir}/ca_ES@valencia/*/*
@@ -150,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(zh_CN) %{_mandir}/zh_CN/*/*
 %lang(zh_TW) %{_mandir}/zh_TW/*/*
 %{_datadir}/applications/*
+%{_iconsdir}/*
 
 %files -n %{name}-server
 %defattr(-,root,root,0755)
