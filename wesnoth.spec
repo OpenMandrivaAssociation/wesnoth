@@ -3,8 +3,8 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.8.4
-Release: %mkrel 2
+Version: 1.8.5
+Release: %mkrel 1
 License: GPLv2+
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
@@ -79,34 +79,35 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesdatadir}/%{name}
 %{_mandir}/*/%{name}.*
 #%{_mandir}/*/%{name}_editor.*
-#%lang(ca) %{_mandir}/ca_ES@valencia/*/*
-%lang(cs) %{_mandir}/cs/*/*
-#%lang(da) %{_mandir}/da/*/*
-%lang(de) %{_mandir}/de/*/*
-%lang(en) %{_mandir}/en_GB/*/*
-%lang(es) %{_mandir}/es/*/*
-%lang(et) %{_mandir}/et/*/*
-%lang(fi) %{_mandir}/fi/*/*
-%lang(fr) %{_mandir}/fr/*/*
-%lang(gl) %{_mandir}/gl/*/*
-%lang(hu) %{_mandir}/hu/*/*
-%lang(it) %{_mandir}/it/*/*
-%lang(ja) %{_mandir}/ja/*/*
-%lang(lt) %{_mandir}/lt/*/*
-#%lang(nl) %{_mandir}/nl/*/*
-%lang(pl) %{_mandir}/pl/*/*
-%lang(pt) %{_mandir}/pt_BR/*/*
-#%lang(ca) %{_mandir}/racv/*/*
-%lang(sk) %{_mandir}/sk/*/*
-%lang(sr) %{_mandir}/sr/*/*
-%lang(sr@latin) %{_mandir}/sr@latin/*/*
-%lang(sr@ijekavian) %{_mandir}/sr@ijekavian/*/*
-%lang(sr@ijekavianlatin) %{_mandir}/sr@ijekavianlatin/*/*
-#lang(sv) %{_mandir}/sv/*/*
-%lang(tr) %{_mandir}/tr/*/*
-#lang(ru) %{_mandir}/ru/*/*
-%lang(zh_CN) %{_mandir}/zh_CN/*/*
-%lang(zh_TW) %{_mandir}/zh_TW/*/*
+#%lang(ca) %{_mandir}/ca_ES@valencia/*/%{name}.*
+%lang(cs) %{_mandir}/cs/*/%{name}.*
+#%lang(da) %{_mandir}/da/*/%{name}.*
+%lang(de) %{_mandir}/de/*/%{name}.*
+%lang(en) %{_mandir}/en_GB/*/%{name}.*
+%lang(es) %{_mandir}/es/*/%{name}.*
+%lang(et) %{_mandir}/et/*/%{name}.*
+%lang(fi) %{_mandir}/fi/*/%{name}.*
+%lang(fr) %{_mandir}/fr/*/%{name}.*
+%lang(gl) %{_mandir}/gl/*/%{name}.*
+%lang(hu) %{_mandir}/hu/*/%{name}.*
+%lang(id) %{_mandir}/id/*/%{name}.*
+%lang(it) %{_mandir}/it/*/%{name}.*
+%lang(ja) %{_mandir}/ja/*/%{name}.*
+%lang(lt) %{_mandir}/lt/*/%{name}.*
+#%lang(nl) %{_mandir}/nl/*/%{name}.*
+%lang(pl) %{_mandir}/pl/*/%{name}.*
+%lang(pt) %{_mandir}/pt_BR/*/%{name}.*
+#%lang(ca) %{_mandir}/racv/*/%{name}.*
+%lang(sk) %{_mandir}/sk/*/%{name}.*
+%lang(sr) %{_mandir}/sr/*/%{name}.*
+%lang(sr@latin) %{_mandir}/sr@latin/*/%{name}.*
+%lang(sr@ijekavian) %{_mandir}/sr@ijekavian/*/%{name}.*
+%lang(sr@ijekavianlatin) %{_mandir}/sr@ijekavianlatin/*/%{name}.*
+#lang(sv) %{_mandir}/sv/*/%{name}.*
+%lang(tr) %{_mandir}/tr/*/%{name}.*
+#lang(ru) %{_mandir}/ru/*/%{name}.*
+%lang(zh_CN) %{_mandir}/zh_CN/*/%{name}.*
+%lang(zh_TW) %{_mandir}/zh_TW/*/%{name}.*
 %{_datadir}/applications/*
 %{_iconsdir}/*
 
@@ -114,3 +115,33 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,0755)
 %{_gamesbindir}/%{name}d
 %{_mandir}/*/%{name}d.*
+#%lang(ca) %{_mandir}/ca_ES@valencia/*/%{name}d.*
+%lang(cs) %{_mandir}/cs/*/%{name}d.*
+#%lang(da) %{_mandir}/da/*/%{name}d.*
+%lang(de) %{_mandir}/de/*/%{name}d.*
+%lang(en) %{_mandir}/en_GB/*/%{name}d.*
+%lang(es) %{_mandir}/es/*/%{name}d.*
+%lang(et) %{_mandir}/et/*/%{name}d.*
+%lang(fi) %{_mandir}/fi/*/%{name}d.*
+%lang(fr) %{_mandir}/fr/*/%{name}d.*
+%lang(gl) %{_mandir}/gl/*/%{name}d.*
+%lang(hu) %{_mandir}/hu/*/%{name}d.*
+%lang(id) %{_mandir}/id/*/%{name}d.*
+%lang(it) %{_mandir}/it/*/%{name}d.*
+%lang(ja) %{_mandir}/ja/*/%{name}d.*
+%lang(lt) %{_mandir}/lt/*/%{name}d.*
+#%lang(nl) %{_mandir}/nl/*/%{name}d.*
+%lang(pl) %{_mandir}/pl/*/%{name}d.*
+%lang(pt) %{_mandir}/pt_BR/*/%{name}d.*
+#%lang(ca) %{_mandir}/racv/*/%{name}d.*
+%lang(sk) %{_mandir}/sk/*/%{name}d.*
+%lang(sr) %{_mandir}/sr/*/%{name}d.*
+%lang(sr@latin) %{_mandir}/sr@latin/*/%{name}d.*
+%lang(sr@ijekavian) %{_mandir}/sr@ijekavian/*/%{name}d.*
+%lang(sr@ijekavianlatin) %{_mandir}/sr@ijekavianlatin/*/%{name}d.*
+#lang(sv) %{_mandir}/sv/*/%{name}d.*
+%lang(tr) %{_mandir}/tr/*/%{name}d.*
+#lang(ru) %{_mandir}/ru/*/%{name}d.*
+%lang(zh_CN) %{_mandir}/zh_CN/*/%{name}d.*
+%lang(zh_TW) %{_mandir}/zh_TW/*/%{name}d.*
+
