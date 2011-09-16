@@ -3,8 +3,8 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.8.5
-Release: %mkrel 2
+Version: 1.8.6
+Release: %mkrel 1
 License: GPLv2+
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
@@ -46,13 +46,12 @@ game without needing to install the full client.
 	-DBINDIR=%{_gamesbindir} \
 	-DDATAROOTDIR=%{_gamesdatadir} \
 	-DDESKTOPDIR=%{_datadir}/applications \
-	-DDOCDIR=%{_datadir}/doc/%name \
+	-DDOCDIR=%{_datadir}/doc/%{name} \
 	-DMANDIR=%{_mandir} -DICONDIR=%{_iconsdir}
 %make
 
 %install
-
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %makeinstall_std -C build
 
@@ -69,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
