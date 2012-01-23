@@ -3,8 +3,8 @@
 
 Summary: Fantasy turn-based strategy game
 Name: wesnoth
-Version: 1.8.6
-Release: %mkrel 1
+Version: 1.10
+Release: 1
 License: GPLv2+
 Group: Games/Strategy
 Url: http://www.wesnoth.org/
@@ -21,7 +21,6 @@ BuildRequires: python-devel
 BuildRequires: pango-devel
 BuildRequires: lua-devel >= 5.1.4
 BuildRequires: cmake
-BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
@@ -51,24 +50,9 @@ game without needing to install the full client.
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std -C build
 
 %find_lang %{name} --all-name
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
-%clean
-rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
