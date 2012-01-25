@@ -75,7 +75,6 @@ export LDFLAGS="$LDFLAGS -lpthread"
 %{_gamesdatadir}/%{name}
 %{_mandir}/*/%{name}.*
 %{_datadir}/applications/*
-%{_datadir}/doc/%{name}/*
 %{_iconsdir}/*
 
 %files -n %{name}-server -f %{name}d.lang
