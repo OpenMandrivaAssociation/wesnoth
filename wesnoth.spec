@@ -3,8 +3,8 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.10.4
-Release:	%mkrel 2
+Version:	1.10.5
+Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
@@ -57,14 +57,10 @@ export LDFLAGS="$LDFLAGS -lpthread"
 %make
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std -C build
 
 %find_lang %{name} --with-man
 %find_lang %{name}d --with-man
-
-%clean
-%__rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
@@ -80,3 +76,4 @@ export LDFLAGS="$LDFLAGS -lpthread"
 %defattr(-,root,root,0755)
 %{_gamesbindir}/%{name}d
 %{_mandir}/*/%{name}d.*
+
