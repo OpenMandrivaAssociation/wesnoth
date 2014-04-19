@@ -4,7 +4,7 @@
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
 Version:	1.10.6
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
