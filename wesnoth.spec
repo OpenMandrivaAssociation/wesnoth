@@ -3,12 +3,12 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.10.6
-Release:	3
+Version:	1.12
+Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
-Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/project/wesnoth/wesnoth-%{version}/wesnoth-%{version}/wesnoth-%{version}.tar.bz2
 Source1:	%{name}-icon.png
 BuildRequires:	cmake
 BuildRequires:	imagemagick
@@ -44,7 +44,7 @@ This package contains "Battle for wesnoth" server, used to play multiplayer
 game without needing to install the full client.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{version}.0
 
 %build
 export LDFLAGS="$LDFLAGS -lpthread"
@@ -58,6 +58,7 @@ export LDFLAGS="$LDFLAGS -lpthread"
 
 %install
 %makeinstall_std -C build
+find %{buildroot} -name .gitignore |xargs rm -f
 
 %find_lang %{name} --with-man
 %find_lang %{name}d --with-man
