@@ -3,7 +3,7 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.12.2
+Version:	1.12.5
 Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
@@ -65,7 +65,7 @@ find %{buildroot} -name .gitignore |xargs rm -f
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
-%doc README
+%doc README.md
 %exclude %{_gamesbindir}/%{name}d
 %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
