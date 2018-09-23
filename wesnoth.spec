@@ -8,7 +8,7 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.14.4
+Version:	1.14.5
 Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
@@ -32,7 +32,7 @@ BuildRequires:	pkgconfig(SDL2_net)
 BuildRequires:	pkgconfig(SDL2_ttf)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(libcrypto)
-Conflicts:	%{sname}
+Conflicts:	%{sname}-unstable
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
@@ -56,7 +56,7 @@ levels, and are carried over from one scenario to the next campaign.
 %package -n %{name}-server
 Summary:	Server for "Battle fo Wesnoth" game
 Group:		Games/Strategy
-Conflicts:	%{sname}-server
+Conflicts:	%{sname}-unstable-server
 
 %description -n %{name}-server
 This package contains "Battle for wesnoth" server, used to play multiplayer

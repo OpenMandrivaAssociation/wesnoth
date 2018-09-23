@@ -1,3 +1,5 @@
-sources:
-  wesnoth-icon.png: d2de2e78b78e3574a93b0f1f99abeb50692efc9c
+removed_sources:
   wesnoth-1.14.4.tar.bz2: a4e1c17f90d5b50405e7e2fa06445e840bd49913
+sources:
+  wesnoth-1.14.5.tar.bz2: 9765776e681601e8b4f87cf9865c0b3c2d3d5edf
+  wesnoth-icon.png: d2de2e78b78e3574a93b0f1f99abeb50692efc9c
