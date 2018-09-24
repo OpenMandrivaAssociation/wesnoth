@@ -19,6 +19,7 @@ Source1:	%{sname}-icon.png
 BuildRequires:	cmake ninja
 BuildRequires:	imagemagick
 BuildRequires:	boost-devel
+BuildRequires:	readline-devel
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(fribidi)
@@ -30,6 +31,7 @@ BuildRequires:	pkgconfig(SDL2_image)
 BuildRequires:	pkgconfig(SDL2_mixer)
 BuildRequires:	pkgconfig(SDL2_net)
 BuildRequires:	pkgconfig(SDL2_ttf)
+BuildRequires:	pkgconfig(systemd)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(libcrypto)
 Conflicts:	%{sname}-unstable
