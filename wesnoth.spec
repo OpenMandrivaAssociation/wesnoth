@@ -1,6 +1,11 @@
 # Not while python2 mess is in use
 %global _python_bytecompile_build 0
 
+#Disable LTO on i686 and armv7 due to build fail because lack of memory (penguin).
+%ifarch %{ix86} {armv7hnl}
+%define _disable_lto 1
+%endif
+
 # TODO add a init file for server, if it is worth
 # split data if we can force a rpm to be noarch
 
