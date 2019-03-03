@@ -2,7 +2,7 @@
 %global _python_bytecompile_build 0
 
 #Disable LTO on i686 and armv7 due to build fail because lack of memory (penguin).
-%ifarch %{ix86} %{armv7hnl}
+%ifarch %{ix86} %{arm}
 %define _disable_lto 1
 %endif
 
