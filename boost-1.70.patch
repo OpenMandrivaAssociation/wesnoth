@@ -1,6 +1,8 @@
---- src/server/server_base.cpp.orig	2018-09-16 07:27:00 UTC
-+++ src/server/server_base.cpp
-@@ -65,7 +65,7 @@ void server_base::start_server()
+Index: src/server/server_base.cpp
+===================================================================
+--- src/server/server_base.cpp
++++ src/server/server_base.cpp	2019-07-18 19:31:01.234051123 +0200
+@@ -65,7 +65,7 @@
  
  void server_base::serve()
  {
