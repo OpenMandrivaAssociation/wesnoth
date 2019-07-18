@@ -78,7 +78,7 @@ game without needing to install the full client.
 
 %prep
 %setup -q -n %{sname}-%{version}
-%autopatch -p1
+%autopatch -p0
 find . -name ".gitignore" -delete
 
 %build
