@@ -39,6 +39,8 @@ BuildRequires:	pkgconfig(SDL2_ttf)
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(libcrypto)
+BuildRequires:  pkgconfig(liblzma)
+BuildRequires:  pkgconfig(libzstd)
 Conflicts:	%{sname}-unstable
 
 %description
