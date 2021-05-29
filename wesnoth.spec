@@ -84,7 +84,7 @@ find . -name ".gitignore" -delete
 
 %build
 export LDFLAGS="$LDFLAGS -lpthread"
-%cmake / 
+%cmake \
 	-DENABLE_STRICT_COMPILATION=OFF \
 	-DENABLE_SHARED_LIBRARIES=OFF \
 	-DBINDIR=%{_bindir} \
