@@ -84,7 +84,9 @@ find . -name ".gitignore" -delete
 
 %build
 export LDFLAGS="$LDFLAGS -lpthread"
-%cmake -DENABLE_STRICT_COMPILATION=OFF \
+%cmake / 
+	-DENABLE_STRICT_COMPILATION=OFF \
+	-DENABLE_SHARED_LIBRARIES=OFF \
 	-DBINDIR=%{_bindir} \
 	-DDATAROOTDIR=%{_datadir} \
 	-DDESKTOPDIR=%{_datadir}/applications \
