@@ -20,6 +20,7 @@ Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
 Source0:	https://github.com/wesnoth/wesnoth/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{sname}-icon.png
+Patch0:		0001-gettext-fix-build-with-Boost.Locale-1.81.patch
 
 BuildRequires:	cmake ninja
 BuildRequires:	imagemagick
@@ -79,7 +80,7 @@ game without needing to install the full client.
 
 %prep
 %setup -q -n %{sname}-%{version}
-%autopatch -p0
+%autopatch -p1
 find . -name ".gitignore" -delete
 
 %build
