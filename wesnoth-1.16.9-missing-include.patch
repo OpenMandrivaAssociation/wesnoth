@@ -5,7 +5,7 @@ diff -uraN wesnoth-1.16.9/src/deprecation.hpp omv-wesnoth-1.16.9/src/deprecation
  
  #pragma once
  
-+#include <stdint.h>
++#include <cstdint>
  #include <string>
  
  /** See https://wiki.wesnoth.org/CompatibilityStandards for more info. */
@@ -16,7 +16,7 @@ diff -uraN wesnoth-1.16.9/src/serialization/base64.hpp omv-wesnoth-1.16.9/src/se
  
  #pragma once
  
-+#include <stdint.h>
++#include <cstdint>
  #include <string_view>
  #include <vector>
  
@@ -27,7 +27,7 @@ diff -uraN wesnoth-1.16.9/src/serialization/preprocessor.hpp omv-wesnoth-1.16.9/
  #include "filesystem.hpp"
  #include "game_version.hpp"
  #include <optional>
-+#include <stdint.h>
++#include <cstdint>
  
  #include <iosfwd>
  #include <map>
