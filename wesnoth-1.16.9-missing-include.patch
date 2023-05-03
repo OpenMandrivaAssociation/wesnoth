@@ -9,3 +9,14 @@ diff -uraN wesnoth-1.16.9/src/serialization/base64.hpp omv-wesnoth-1.16.9/src/se
  #include <string_view>
  #include <vector>
  
+diff -uraN wesnoth-1.16.9/src/serialization/preprocessor.hpp omv-wesnoth-1.16.9/src/serialization/preprocessor.hpp
+--- wesnoth-1.16.9/src/serialization/preprocessor.hpp	2023-04-16 03:16:27.000000000 +0200
++++ omv-wesnoth-1.16.9/src/serialization/preprocessor.hpp	2023-05-03 14:56:42.865972985 +0200
+@@ -21,6 +21,7 @@
+ #include "filesystem.hpp"
+ #include "game_version.hpp"
+ #include <optional>
++#include <stdint.h>
+ 
+ #include <iosfwd>
+ #include <map>
