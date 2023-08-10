@@ -13,14 +13,13 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.16.9
+Version:	1.16.10
 Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
 Source0:	https://github.com/wesnoth/wesnoth/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{sname}-icon.png
-Patch0:		wesnoth-1.16.9-missing-include.patch
 
 BuildRequires:	cmake ninja
 BuildRequires:	imagemagick
