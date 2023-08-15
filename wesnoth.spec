@@ -20,6 +20,7 @@ Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
 Source0:	https://github.com/wesnoth/wesnoth/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{sname}-icon.png
+Patch0:		wesnoth-1.16.10-boost-1.83.patch
 
 BuildRequires:	cmake ninja
 BuildRequires:	imagemagick
@@ -31,7 +32,7 @@ BuildRequires:	pkgconfig(fribidi)
 BuildRequires:	pkgconfig(lua)
 BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(pangocairo)
-BuildRequires:	pkgconfig(python2)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(SDL2_image)
 BuildRequires:	pkgconfig(SDL2_mixer)
 BuildRequires:	pkgconfig(SDL2_net)
