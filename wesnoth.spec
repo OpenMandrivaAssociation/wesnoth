@@ -20,7 +20,6 @@ Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
 Source0:	https://github.com/wesnoth/wesnoth/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{sname}-icon.png
-Patch0:		wesnoth-1.16.10-boost-1.83.patch
 
 BuildRequires:	cmake ninja
 BuildRequires:	imagemagick
