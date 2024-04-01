@@ -1,6 +1,3 @@
-# Not while python2 mess is in use
-%global _python_bytecompile_build 0
-
 #Disable LTO on i686 and armv7 due to build fail because lack of memory (penguin).
 %ifarch %{ix86} %{arm}
 %define _disable_lto 1
@@ -13,18 +10,22 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.16.11
-Release:	2
+Version:	1.18.0
+Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
 Url:		http://www.wesnoth.org/
-Source0:	https://github.com/wesnoth/wesnoth/archive/%{version}/%{name}-%{version}.tar.gz
+# Looks like source from GH no longer contains lua submodules. Use tarball from wesnoth website instead.
+#Source0:	https://github.com/wesnoth/wesnoth/archive/%{version}/%{sname}-%{version}.tar.gz
+Source0:	https://www.wesnoth.org/files/wesnoth-%{version}.tar.bz2
 Source1:	%{sname}-icon.png
+Patch0:		wesnoth-1.18.0-boost-1.85.patch
 
 BuildRequires:	cmake ninja
 BuildRequires:	imagemagick
 BuildRequires:	boost-devel
 BuildRequires:	readline-devel
+BuildRequires:  pkgconfig(libcurl)
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(fribidi)
@@ -43,6 +44,7 @@ BuildRequires:	pkgconfig(libcrypto)
 BuildRequires:  pkgconfig(liblzma)
 BuildRequires:  pkgconfig(libzstd)
 Conflicts:	%{sname}-unstable
+Obsoletes:	wesnoth =< 1.17.0-2
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
@@ -79,12 +81,9 @@ game without needing to install the full client.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{sname}-%{version}
-%autopatch -p1
+%autosetup -p1 -n %{sname}-%{version}
 find . -name ".gitignore" -delete
 
-%build
-export LDFLAGS="$LDFLAGS -lpthread"
 %cmake \
 	-DENABLE_STRICT_COMPILATION=OFF \
 	-DENABLE_SHARED_LIBRARIES=OFF \
@@ -94,7 +93,9 @@ export LDFLAGS="$LDFLAGS -lpthread"
 	-DDOCDIR=%{_datadir}/doc/%{sname} \
 	-DMANDIR=%{_mandir} -DICONDIR=%{_iconsdir} \
 	-G Ninja
-%ninja_build
+
+%build
+%ninja_build -C build
 
 %install
 %ninja_install -C build
