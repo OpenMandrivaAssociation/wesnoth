@@ -46,7 +46,6 @@ Conflicts:	%{sname}-unstable
 Obsoletes:	wesnoth =< 1.17.0-2
 
 %patchlist
-wesnoth-1.18.2-boost-1.86.patch
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
