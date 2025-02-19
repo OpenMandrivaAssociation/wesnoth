@@ -10,8 +10,8 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.18.3
-Release:	7
+Version:	1.18.4
+Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
 Url:		https://www.wesnoth.org/
@@ -46,7 +46,7 @@ Conflicts:	%{sname}-unstable
 Obsoletes:	wesnoth =< 1.17.0-2
 
 %patchlist
-wesnoth-1.18.3-boost-1.87.patch
+#wesnoth-1.18.3-boost-1.87.patch
 
 %description
 Battle for Wesnoth is a fantasy turn-based strategy game.
