@@ -1,0 +1,31 @@
+diff -up wesnoth-1.18.4/CMakeLists.txt.2~ wesnoth-1.18.4/CMakeLists.txt
+--- wesnoth-1.18.4/CMakeLists.txt.2~	2025-02-17 22:50:08.000000000 +0100
++++ wesnoth-1.18.4/CMakeLists.txt	2025-09-23 19:54:49.584332115 +0200
+@@ -93,7 +93,7 @@ if(APPLE)
+ 	find_library(SECURITY_LIBRARY Security REQUIRED)
+ endif()
+ 
+-find_package(Boost ${BOOST_VERSION} REQUIRED COMPONENTS iostreams program_options regex system thread random coroutine locale filesystem graph)
++find_package(Boost ${BOOST_VERSION} REQUIRED COMPONENTS iostreams program_options regex thread random coroutine locale filesystem graph)
+ find_package(ICU REQUIRED COMPONENTS data i18n uc)
+ 
+ # no, gettext executables are not required when NLS is deactivated
+diff -up wesnoth-1.18.4/src/CMakeLists.txt.2~ wesnoth-1.18.4/src/CMakeLists.txt
+--- wesnoth-1.18.4/src/CMakeLists.txt.2~	2025-09-23 19:54:49.578535523 +0200
++++ wesnoth-1.18.4/src/CMakeLists.txt	2025-09-23 20:38:17.388779821 +0200
+@@ -248,7 +248,6 @@ if(ENABLE_GAME)
+ 		Boost::iostreams
+ 		Boost::program_options
+ 		Boost::regex
+-		Boost::system
+ 		Boost::random
+ 		Boost::coroutine
+ 		Boost::locale
+@@ -345,7 +344,6 @@ if(ENABLE_SERVER)
+ 		Boost::iostreams
+ 		Boost::program_options
+ 		Boost::regex
+-		Boost::system
+ 		Boost::random
+ 		Boost::coroutine
+ 		Boost::locale

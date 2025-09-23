@@ -1,0 +1,11 @@
+diff -up wesnoth-1.18.4/src/filesystem.hpp.omv~ wesnoth-1.18.4/src/filesystem.hpp
+--- wesnoth-1.18.4/src/filesystem.hpp.omv~	2025-09-23 20:40:09.946255819 +0200
++++ wesnoth-1.18.4/src/filesystem.hpp	2025-09-23 20:40:16.570437141 +0200
+@@ -26,6 +26,7 @@
+ #include <memory>
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ 
+ #include "exceptions.hpp"
+ #include "game_version.hpp"
