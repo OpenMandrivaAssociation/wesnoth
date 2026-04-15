@@ -46,8 +46,8 @@ Conflicts:	%{sname}-unstable
 Obsoletes:	wesnoth =< 1.17.0-2
 
 %patchlist
-wesnoth-1.18.3-boost-1.88.patch
-wesnoth-1.18.4-boost-1.89.patch
+#wesnoth-1.18.3-boost-1.88.patch
+#wesnoth-1.18.4-boost-1.89.patch
 wesnoth-1.18.4-missing-include.patch
 
 %description
