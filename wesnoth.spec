@@ -10,8 +10,8 @@
 
 Summary:	Fantasy turn-based strategy game
 Name:		wesnoth
-Version:	1.18.7
-Release:	4
+Version:	1.18.8
+Release:	1
 License:	GPLv2+
 Group:		Games/Strategy
 Url:		https://www.wesnoth.org/
@@ -47,7 +47,8 @@ Obsoletes:	wesnoth =< 1.17.0-2
 
 %patchlist
 #wesnoth-1.18.3-boost-1.88.patch
-wesnoth-1.18.4-boost-1.89.patch
+# 1.18.8 already makes Boost::system optional for the client and server.
+#wesnoth-1.18.4-boost-1.89.patch
 wesnoth-1.18.4-missing-include.patch
 
 %description
